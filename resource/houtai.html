@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../public/css/houtai.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>简易新闻站后台管理页面</header>
+
+  <aside>
+    <form action="" method="POST" enctype="multipart/form-data"><!--搜索框-->
+      <input type="text" placeholder="请输入标题名关键字，关键字间用空格隔开" name="sech" id="sechinput">
+      <button id="sech" type="button"></button> <!--由于这里使用的是 ajax 发送请求并获取响应数据，因此加 type="button" 使其变为普通按钮-->
+    </form>
+    <label for="xinwenguanli"><h2>新闻管理</h2></label>
+    <input type="checkbox" id="xinwenguanli"></input>
+    <ul>
+      <li class="xuanxiang">新闻列表</li>
+      <li class="xuanxiang">添加新闻</li>
+    </ul>
+    <label for="zhuanti"><h2>专题</h2></label>
+    <input type="checkbox" id="zhuanti"></input>
+    <ul>
+      <li class="xuanxiang">专题列表</li>
+      <li class="xuanxiang">向专题中添加新闻</li>
+      <li class="xuanxiang">创建专题</li>
+    </ul>
+  </aside>
+
+  <section id="main">
+    <div id="list" class="dakuang">
+      <h2>新闻列表</h2>
+      <ul>
+        <li>id</li>
+        <li>标题</li>
+        <li>类别</li>
+        <li>发布时间</li>
+        <li>点击率</li>
+        <li>评论数</li>
+        <li>操作</li>
+      </ul>
+      <div id="jiluk">
+
+      </div>
+      </ul>
+      <ul id="page">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>》</li>
+      </ul>
+    </div>
+
+    <div id="addxw" class="dakuang">
+      <h2>添加新闻</h2>
+      <form action="http://localhost/news/php/houtai.php?m=addxw" method="post" enctype="multipart/form-data">
+        <div>标题：<input type="text" placeholder="请输入新闻标题" name="title" size="100"></div>
+        <div>类型：
+          <select name="lx">
+            <option value="yw">要闻</option>
+            <option value="sp">视频</option>
+            <option value="yl">娱乐</option>
+            <option value="ty">体育</option>
+            <option value="js">军事</option>
+            <option value="nba">NBA</option>
+            <option value="gj">国际</option>
+            <option value="kj">科技</option>
+          </select>
+        </div>
+        <div>正文：<textarea name="text" cols="150" rows="20">请输入正文，图片、视频、音频依次用 &lt;img&gt;、&lt;vd&gt;、&lt;au&gt; 表示，上传时按住 ctrl 选中多个资源即可，资源展示顺序由资源名确定，资源名开头应为 1、2、3 ... 后用 _ 跟真实文件名。段落换行即可。</textarea></div>
+
+        <div>资源：<input type="file" multiple="multiple" name="f[]"></div>
+        <div><button>提交</button></div>
+      </form>
+    </div>
+
+    </div>
+    <div id="ztlist" class="dakuang">
+      <h2>专题列表</h2>
+      <ul>
+        <li>id</li>
+        <li>专题名</li>
+        <li>创建时间</li>
+        <li>操作</li>
+      </ul>
+      <div id="ztjiluk">
+      
+      </div>
+      <ul id="ztpage">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>》</li>
+      </ul>
+    </div>
+    <div id="addztxw" class="dakuang">
+      <h2>向专题中添加新闻</h2>
+      <form action="http://localhost/news/php/houtai.php?m=addztxw" method="post" enctype="multipart/form-data">
+        <div>专题 id：<input type="text" placeholder="请输入专题 id" name="ztid" size="100"></div>
+        <div>新闻 id：<input type="text" placeholder="请输入新闻 id" name="xwid" size="100"></div>
+        <div>类型：
+          <select name="lx">
+            <option value="yw">要闻</option>
+            <option value="sp">视频</option>
+            <option value="yl">娱乐</option>
+            <option value="ty">体育</option>
+            <option value="js">军事</option>
+            <option value="nba">NBA</option>
+            <option value="gj">国际</option>
+            <option value="kj">科技</option>
+          </select>
+        </div>
+        <div><button>提交</button></div>
+      </form>
+    </div>
+    <div id="addzt" class="dakuang">
+      <h2>创建专题</h2>
+      <form action="http://localhost:/news/php/houtai.php?m=addzt" method="post" enctype="multipart/form-data">
+        <div>专题名：<input type="text" placeholder="请输入专题名" name="zttitle" size="100"></div>
+        <div><button>提交</button></div>
+      </form>
+    </div>
+  </section>
+  <script src="../public/js/public.js"></script>
+  <script src="../public/js/houtai.js"></script>
+</body>
+
+</html>

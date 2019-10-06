@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/*公共样式开始*/
+*{ margin:0px;  padding:0px; }
+ul{ list-style-type:none; }
+p{ text-indent:2em; }
+a{ text-decoration:none; }
+/*公共样式结束*/
+
+/*头部样式开始*/
+header{
+  position:fixed;
+  top:0px;
+  height:60px;
+  background:rgb(50,50,50);
+  width:100%;
+  z-index:9998;
+}
+  /*导航栏样式开始*/
+  header #caidan{
+    background:url(../img/caidan.svg) no-repeat center/30px;
+    width:60px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left:120px;
+    transition:all 0.5s;
+  }
+  header #caidan:hover{ transform:rotate(90deg); }
+  header #caidank{
+    width:300px;
+    height:0px;
+    background:rgb(50,50,50);
+    position:absolute;
+    top:60px;
+    left:120px;
+    transition:all 0.4s;
+  }
+  header #caidank ul{ width:100%; }
+  header #caidank ul li a{
+    color:rgb(200,200,200);
+    width:100px;
+    overflow:hidden;
+    text-align:center;
+    height:0px;
+    line-height:70px;
+    float:left;
+    cursor:pointer;
+    transition:all 0.4s;
+  }
+  header #caidank ul li a:hover{
+    background:rgb(0,0,0);
+    color:rgb(250,250,250);
+  }
+  header #caidan:hover + #caidank{ height:210px; }          /*悬浮到菜单按钮时触发*/
+  header #caidan:hover + #caidank ul li a{ height:70px; }
+  header #caidank:hover{ height:210px; }                    /*悬浮到菜单上时仍保存触发状态*/
+  header #caidank:hover ul li a{ height:70px; }
+  /*导航栏样式结束*/
+
+  /*用户样式开始*/
+  header #login{
+    position:absolute;
+    top:15px;
+    left:90%;
+    width:80px;
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    background:rgb(100,100,100);
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    transition:all 0.5s;
+    display:block;
+    cursor:pointer;
+  }
+  header #login:hover{
+    background:rgb(150,150,150);
+    color:rgb(250,250,250);
+  }
+  header #user{
+    position:absolute;
+    top:15px;
+    cursor:pointer;
+    left:90%;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    font-size:18px;
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display:none;
+  }
+  /*用户样式结束*/
+
+/*头部样式结束*/
+
+#body{
+  width:70%;
+  margin:100px 15%;
+}
+
+/*标题样式开始*/
+h2{
+  width:90%;
+  height:70px;
+  line-height:70px;
+  font-size:35px;
+  letter-spacing:0.3em;
+  padding-left:15px;
+  color:rgb(240,240,240);
+  background-image:linear-gradient(to right,rgba(60,60,60,0.9),rgba(250, 250, 250,0.5) 100%);
+  border-left:12px solid black;
+  margin-bottom:20px;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+/*标题样式结束*/
+
+/*列表样式开始*/
+#body a{
+  display:block;
+  width:80%;
+  margin:20px;
+}
+#body a figure{
+  height:200px;
+  width:100%;
+  position:relative;
+  padding:20px 0px;
+  overflow:hidden;
+  border-bottom:1px solid rgb(200,200,200);
+}
+#body a figure:hover{ background:rgb(244,244,244); }
+#body a figure img{ width:36%; max-height:200px; }
+#body a figure figcaption{
+  position:absolute;
+  width:60%;
+  top:0px;
+  left:40%;
+  height:200px;
+}
+#body a figure figcaption .title{
+  width:60%;
+  padding-top:22px;
+  font-size:28px;
+  line-height:1.5em;
+  color:rgb(50,50,50);
+}
+#body a figure figcaption .title:hover{ color:rgb(150,150,150); }
+#body a figure figcaption .lx,#body a figure figcaption .time{
+  position:absolute;
+  color:rgb(100,100,100);
+  top:96%;
+}
+#body a figure figcaption .lx{ left:1%; }
+#body a figure figcaption .time{ left:85%; }
+/*列表样式结束*/

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>新闻站——用户注册</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    *{margin:0px;padding:0px;}
+    body{ width:100%; background:rgb(60,60,60); }
+    form{
+      width:100%;
+      margin:7% 0px;
+    }
+    form label{
+      display:block;
+      margin:50px auto;
+      width:500px;
+    }
+    form input[type^="text"],form input[type^="password"],form input[type^="numb"]{
+      width:400px;
+      height:35px;
+      font-size:18px;
+      background:black;
+      color:rgb(230,230,230);
+      border-radius:20px;
+      padding-left:15px;
+    }
+    form input[type^="radio"]{
+      width:25px;
+      height:25px;
+      margin:0px 15px;
+    }
+    button{
+      width:100%;
+      height:40px;
+      background:black;
+      color:rgb(230,230,230);
+      font-size:18px;
+      border-radius:20px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="http://localhost/news/index.php?m=reg" method="post" enctype="multipart/form-data">
+    <label>邮箱：<input type="text" name="mail" placeholder="请输入邮箱"></label>
+    <label>网名：<input type="text" name="user" placeholder="只能由字母、数字、下划线、汉字组成"></label>
+    <label>密码：<input class="pw" type="password" name="pw" placeholder="请输入密码"></label>
+    <label>确认：<input class="pw" type="password" name="pw2" placeholder="再次输入确认密码"></label>
+    <label>性别：男<input type="radio" name="sex" value="男">女<input type="radio" name="sex" value="女"></label>
+    <label>年龄：<input type="number" name="age" placeholder="请输入年龄"></label>
+    <label><button id="b" type="button">确认</button></label>
+  </form>
+  <script>
+    var b = document.getElementById('b');
+    b.onclick=function(){
+      var pw = document.getElementsByClassName('pw');
+      var user = document.getElementById('user');
+      var test = /^[\d,_,a-z,A-Z,\u2E80-\u9FFF]{1,30}$/i;
+
+      var text = document.querySelectorAll('form input[type^="text"]');
+      if(text[0].value==''){
+        alert('邮箱不能为空！');
+        return;
+      }
+      if (text[1].value == ''){
+        alert('网名不能为空！');
+        return;
+      }
+      else if(!(test.test(text[1].value))){
+        alert('网名只能由字母、数字、下划线、汉字组成');
+        return;
+      }
+      if (pw[0].value == '' || pw[1].value==''){
+        alert('密码不能为空');
+        return;
+      }
+      if(pw[0].value != pw[1].value){
+        alert('两次输入的密码不一致！');
+        return;
+      }
+      this.type = 'submit';
+      alert('注册成功');
+    }
+  </script>
+</body>
+
+</html>

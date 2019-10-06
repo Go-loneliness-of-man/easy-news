@@ -1,0 +1,390 @@
+@charset "utf-8";
+
+/*公共样式开始*/
+*{ margin:0px;  padding:0px; }
+ul{ list-style-type:none; }
+p{ text-indent:2em; }
+a{ text-decoration:none; }
+/*公共样式结束*/
+
+/*头部样式开始*/
+header{
+  height:70px;
+  background:rgb(50,50,50);
+  position:fixed;
+  width:100%;
+  top:0px;
+  min-width:1200px;
+  box-shadow:5px 5px 30px black;
+  z-index:9998;
+}
+  /*导航栏开始*/
+  header > ul{
+    margin:0px 0px 0px 260px;
+    height:70px;
+  }
+  header > ul > li{ float:left; width:11%; }
+  header > ul > li > a{
+    line-height:70px;
+    text-align:center;
+    font-size:21px;
+    height:70px;
+    color:rgb(200,200,200);
+    float:left;
+    width:100%;
+    top:0px;
+  }
+  header > ul > li:hover a{
+    background:rgb(0,0,0);
+    font-size:25px;
+    color:white;
+    height:75px;
+  }
+  header > ul > li .clicked{
+    background:rgb(0,0,0);
+    font-size:25px;
+    color:white;
+    height:75px;
+  }
+  /*导航栏结束*/
+
+  /*用户样式开始*/
+  header #login{
+    position:absolute;
+    top:20px;
+    left:90%;
+    width:80px;
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    background:rgb(100,100,100);
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    transition:all 0.5s;
+    display:block;
+    cursor:pointer;
+  }
+  header #login:hover{
+    background:rgb(150,150,150);
+    color:rgb(250,250,250);
+  }
+  header #user{
+    position:absolute;
+    top:20px;
+    left:90%;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    font-size:18px;
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display:none;
+    cursor:pointer;
+  }
+  /*用户样式结束*/
+/*头部样式结束*/
+
+#body{ width:1200px; margin:90px auto; }
+
+/*返回顶部按钮开始*/
+#backtop{
+  background: url(../img/backtop.svg) no-repeat center/90px;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  position: fixed;
+  top:85%;
+  left:92%;
+}
+#backtop:hover{
+  background: rgb(220,220,220) url(../img/backtop.svg) no-repeat center/99px;
+}
+#backtoptarget{ position:absolute; top:0px; }
+/*返回顶部按钮结束*/
+
+/*主栏开始*/
+#main{
+  width:850px;
+  float:left;
+  margin-bottom:50px;
+}
+  /*轮播图开始*/
+  #lb{
+    position:relative;
+    height:460px;
+    width:100%;
+    overflow:hidden;
+    margin-top:20px;
+  }
+  #main > h2{
+    width:100px;
+    margin:20px 0px 0px 0px;
+    padding-bottom:10px;
+    border-bottom:solid 3px rgb(90,90,90);
+  }
+  #main > hr{ width:1200px; }
+  #lb > figure{
+    position:absolute;
+    width:100%;
+    height:460px;
+    display:inline-block;
+    background-image:linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.6));
+  }
+  #lb figure a{ display:inline-block; width:100%; }
+  #lb figure a img{
+    position:relative;
+    z-index:-1;
+    width:100%;
+  }
+  #lb figure figcaption{ width:100%; }
+  #lb figure figcaption a{
+    position:absolute;
+    z-index:1;
+    left:50px;
+    color:rgb(240,240,240);
+  }
+  #lb figure figcaption .title{
+    font-size:30px;
+    top:300px;
+    width:780px;
+    height:40px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+  }
+  #lb figure figcaption .text{
+    top:350px;
+    width:780px;
+    height:80px;
+    line-height:1.5em;
+    font-size:21px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+  }
+  #lb #l, #lb #r {
+    position: absolute;
+    top: 140px;
+    border: solid 100px transparent;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+  }
+  #lb #l { left: -70px; border-right: solid 50px rgba(100, 100, 100, 0.4); }
+  #lb #r { right: -70px; border-left: solid 50px rgba(100, 100, 100, 0.4); }
+  #lb #l:hover { border-right: solid 50px rgba(240, 240, 240, 0.7); }
+  #lb #r:hover { border-left: solid 50px rgba(240, 240, 240, 0.7); }
+  /*轮播图结束*/
+
+  /*热点开始*/
+  #hot{
+    margin-top:20px;
+    width:100%;
+  }
+  #hot h2{
+    border-bottom: solid 3px rgb(90,90,90);
+    padding:10px;
+    width:100px;
+  }
+  #hot figure{
+    height:200px;
+    width:100%;
+    position:relative;
+    padding:20px 0px;
+    border-bottom:1px solid rgb(200,200,200);
+  }
+  #hot figure:hover{ background:rgb(244,244,244); }
+  #hot .rd figcaption,#hot .zt figcaption,#hot .pt figcaption{  /*文本样式*/
+    position:absolute;
+    width:450px;
+    top:0px;
+    left:350px;
+    color:rgb(150,150,150);
+  }
+  #hot .rd img,#hot .zt img,#hot .pt img{
+    width:36%;
+    max-height:190px;
+    overflow:hidden;
+  }
+  #hot .dt figcaption{  /*“多图”文本样式*/
+    position:absolute;
+    width:100%;
+    top:0px;
+    height:50px;
+  }
+  #hot .dt img{
+    margin:50px 10px 0px 0px;
+    width:30%;
+    height:130px;
+  }
+  #hot figure figcaption a{
+    margin-top:20px;
+    font-size:25px;
+    line-height:50px;
+    color:rgb(80,80,80);
+    text-indent:2em;
+    display:inline-block;
+  }
+  #hot .dt figcaption a,#hot .pt figcaption a{ text-indent:0em; }
+  #hot figure figcaption a:hover{ color:rgb(150,150,150); }
+  #hot .rd figcaption #bt{  /*“热点”标题样式*/
+    background-image: url(../img/huo.svg);
+    display:inline-block;
+    position:absolute;
+    top:30px;
+    left:10px;
+    width:35px;
+    height:32px;
+  }
+  #hot .zt figcaption #bt{
+    position:absolute;
+    top:33px;
+    left:0px;
+    text-align:center;
+    width:45px;
+    font-size:16px;
+    height:28px;
+    line-height:28px;
+    color:rgb(200,200,200);
+    border-radius:5px;
+    background:rgb(20,20,20);
+  }
+  #hot figure figcaption .time{ /*时间样式*/
+    position:absolute;
+    top:200px;
+    left:0px;
+  }
+  #hot figure figcaption .share{  /*分享样式*/
+    background: url(../img/share.svg) no-repeat left/23px;
+    text-indent:0em;
+    padding-left:30px;
+    position:absolute;
+    top:165px;
+    left:300px;
+    font-size:16px;
+    color:rgb(150,150,150);
+  }
+  #hot figure figcaption .pl{ /*评论样式*/
+    background: url(../img/pl.svg) no-repeat left/25px;
+    position:absolute;
+    top:165px;
+    left:400px;
+    font-size:16px;
+    color:rgb(150,150,150);
+    text-indent:0em;
+    padding-left:30px;
+  }
+  #hot .dt figcaption .time{  /*“多图”时间样式*/
+    top:210px;
+    left:10px;
+    color:rgb(150,150,150);
+  }
+  #hot .dt figcaption .share{ /*“多图”分享样式*/
+    top:175px;
+    left:650px;
+    color:rgb(150,150,150);
+  }
+  #hot .dt figcaption .pl{  /*“多图”评论样式*/
+    top:175px;
+    left: 752px;
+    font-size:16px;
+    color:rgb(150,150,150);
+  }
+  #hot #ckgdnew{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-size: 17px;
+    background:rgb(220,220,220);
+    color:rgb(100,100,100);
+    cursor: pointer;
+  }
+  #hot #ckgdnew:hover{ background:rgb(180,180,180); }
+  /*热点结束*/
+/*主栏结束*/
+
+/*侧栏开始*/
+#aside{
+  width:350px;
+  float:left;
+  margin-top:87px;
+}
+#aside h2{
+  width:90%;
+  height:40px;
+  line-height:40px;
+  font-size:25px;
+  padding-left:15px;
+  color:rgb(230,230,230);
+  background-image:linear-gradient(to right,rgba(60,60,60,0.9),rgba(250, 250, 250,0.2) 100%);
+  border-left:12px solid black;
+}
+#aside > div{
+  width:90%;
+  margin:10px 0px 10px 10%;
+  background:rgb(246,246,246);
+}
+#aside > div > figure{
+  position:relative;
+  height:100px;
+  margin:20px 0px 0px 15px;
+  width:100%;
+  overflow:hidden;
+}
+#aside > div > figure > img{
+  position:absolute;
+  width:40%;
+}
+#aside > div > figure > figcaption{
+  position:absolute;
+  width:50%;
+  left:40%;
+  padding:1% 5%;
+}
+#aside > div > figure > figcaption > a{ color:rgb(90,90,90); }
+#aside > div > figure > figcaption > a:hover{ color:rgb(150,150,150); }
+#aside > div > ul{
+  width:90%;
+  margin:10px 5%;
+}
+#aside > div > ul > li{ position:relative; padding-left:10px; }
+#aside > div > ul > li::after{
+  content:'s';
+  font-size:0px;
+  display:block;
+  background:rgb(50,50,50);
+  height:8px;
+  width:8px;
+  border-radius:10px;
+  position:absolute;
+  top:19px;
+  left:-3px;
+}
+#aside > div > ul > li > a{
+  display:inline-block;
+  width:100%;
+  margin:10px 0px;
+  color:rgb(90,90,90);
+  height:25px;
+  line-height:25px;
+  font-size:15px;
+}
+#aside div[id^="ckgd"]{
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    font-size:15px;
+    background:rgb(220,220,220);
+    color:rgb(100,100,100);
+    cursor: pointer;
+    margin-top:10px;
+  }
+#aside div[id^="ckgd"]:hover{ background:rgb(180,180,180); }
+#aside > div > ul > li > a:hover{ color:rgb(150,150,150); }
+/*侧栏结束*/

@@ -1,0 +1,423 @@
+@charset "utf-8";
+
+/*公共样式开始*/
+*{ margin:0px;  padding:0px; }
+ul{ list-style-type:none; }
+p{ text-indent:2em; }
+a{ text-decoration:none; }
+/*公共样式结束*/
+
+/*头部样式开始*/
+header{
+  position:fixed;
+  top:0px;
+  height:60px;
+  background:rgb(50,50,50);
+  width:100%;
+  z-index:9998;
+}
+  /*导航栏样式开始*/
+  header #caidan{
+    background:url(../img/caidan.svg) no-repeat center/30px;
+    width:60px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left:120px;
+    transition:all 0.5s;
+  }
+  header #caidan:hover{ transform:rotate(90deg); }
+  header #caidank{
+    width:300px;
+    height:0px;
+    background:rgb(50,50,50);
+    position:absolute;
+    top:60px;
+    left:120px;
+    transition:all 0.4s;
+  }
+  header #caidank ul{ width:100%; }
+  header #caidank ul li a{
+    color:rgb(200,200,200);
+    width:100px;
+    overflow:hidden;
+    text-align:center;
+    height:0px;
+    line-height:70px;
+    float:left;
+    cursor:pointer;
+    transition:all 0.4s;
+  }
+  header #caidank ul li a:hover{
+    background:rgb(0,0,0);
+    color:rgb(250,250,250);
+  }
+  header #caidan:hover + #caidank{ height:210px; }          /*悬浮到菜单按钮时触发*/
+  header #caidan:hover + #caidank ul li a{ height:70px; }
+  header #caidank:hover{ height:210px; }                    /*悬浮到菜单上时仍保存触发状态*/
+  header #caidank:hover ul li a{ height:70px; }
+  /*导航栏样式结束*/
+
+  /*头部标题样式开始*/
+  header #tbbt{
+    position:absolute;
+    top:0px;
+    left:275px;
+    color:rgb(210,210,210);
+    width:65%;
+    height:60px;
+    line-height:60px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    font-size:22px;
+  }
+  /*头部标题样式结束*/
+
+  /*用户样式开始*/
+  header #login{
+    position:absolute;
+    top:15px;
+    left:90%;
+    width:80px;
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    background:rgb(100,100,100);
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    transition:all 0.5s;
+    display:block;
+    cursor:pointer;
+  }
+  header #login:hover{
+    background:rgb(150,150,150);
+    color:rgb(250,250,250);
+  }
+  header #user{
+    position:absolute;
+    top:15px;
+    left:90%;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    font-size:18px;
+    border-radius:6px;
+    color:rgb(200,200,200);
+    text-align:center;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display:none;
+    cursor:pointer;
+  }
+  /*用户样式结束*/
+
+/*头部样式结束*/
+
+#body{ width:65%; margin:180px 15% 20px 20%; }
+
+body > h2{
+  position:absolute;
+  top:100px;
+  width:60%;
+  height:40px;
+  line-height:40px;
+  font-size:38px;
+  margin:0px 15% 20px 20%;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+/*主栏样式开始*/
+#main{ width:73%; float:left; margin-right:2%; margin-bottom:100px; }
+#main #text img,#main #text audio,#main #text video{
+  margin:25px auto;
+  display:block;
+  max-width:90%;
+}
+p{
+  margin:30px 0px;
+  line-height:1.9em;
+  font-size:18px;
+}
+#theend{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  font-size:24px;
+  margin:50px 0px;
+}
+  /*评论区样式开始*/
+  #plk{ width:100%; }
+    /*发表评论框样式开始*/
+    #plk #plkbt{
+      width:100%;
+      font-size:26px;
+      margin:20px 0px;
+    }
+    #plk #plkbt::after{
+      content:'文明上网理性发言，请遵守新闻评论服务协议';
+      color:rgb(180,180,180);
+      font-size:15px;
+      margin:0px 10px;
+    }
+    #plk #fabiao{
+      width:100%;
+      height:120px;
+      margin-bottom:40px;
+      position:relative;
+    }
+    #plk #fabiao textarea{
+      width:81%;
+      height:100px;
+      padding:10px 1.5%;
+      font-size:18px;
+      line-height:1.6em;
+    }
+    #plk #fabiao button{
+      background:#379be9;
+      width:15%;
+      height:124px;
+      line-height:124px;
+      position:absolute;
+      top:-2px;
+      left:84%;
+      text-align:center;
+      cursor:pointer;
+      font-size:22px;
+      color:white;
+    }
+    #plk #fabiao button:hover{ background:#2f83c4; }
+    /*发表评论框样式结束*/
+
+    /*全部评论样式开始*/
+    #plk #allplbt{
+      width:100%;
+      font-size:26px;
+      margin:20px 0px;
+    }
+    #plk #allpl{ margin:20px 0px; }
+    #plk #allpl,#plk #allpl .singlepl{ width:100%; }
+    #plk #allpl .singlepl{
+      border-bottom:1px solid rgba(180,180,180,0.6);
+      padding:25px 0px;
+    }
+    #plk #allpl .singlepl .u{
+      color:rgb(100,100,100);
+      cursor:pointer;
+      height:20px;
+      line-height:20px;
+      margin:5px 0px;
+      width:120px;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow:hidden;
+      font-size:15px;
+    }
+    #plk #allpl .singlepl .u:hover{ color:rgb(180,180,180); }
+    #plk #allpl .singlepl .nr{
+      width:95%;
+      font-size:17px;
+      color:rgb(50,50,50);
+      line-height:1.5em;
+      margin:10px 0px;
+      margin-left:5%;
+    }
+    #plk #allpl .singlepl .other{
+      height:30px;
+      position:relative;
+      width:100%;
+      font-size:14px;
+      color:rgb(100,100,100);
+    }
+    #plk #allpl .singlepl .other .good{
+      position:absolute;
+      background:url(../img/good.svg) no-repeat left/19px;
+      padding-top:3px;
+      padding-left:20px;
+      top:0px;
+      left:0px;
+      cursor:pointer;
+    }
+    #plk #allpl .singlepl .other .pltime{
+      position:absolute;
+      top:4px;
+      right:60px;
+    }
+    #plk #ckgdpl{
+      width:100%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      font: size 17px;
+      background:rgb(220,220,220);
+      color:rgb(100,100,100);
+      cursor: pointer;
+    }
+    #plk #ckgdpl:hover{ background:rgb(180,180,180); }
+    /*全部评论样式结束*/
+
+    /*推荐样式开始*/
+    #tuijian #tuijianbt{
+      width:100%;
+      font-size:26px;
+      margin:20px 0px;
+    }
+    #tuijian a{ display:block; width:100%; }
+    #tuijian a figure{
+      height:200px;
+      width:100%;
+      position:relative;
+      padding:20px 0px;
+      border-bottom:1px solid rgb(200,200,200);
+    }
+    #tuijian a figure:hover{ background:rgb(244,244,244); }
+    #tuijian a figure img{
+      width:36%;
+      overflow:hidden;
+      height:200px;
+    }
+    #tuijian a figure figcaption{
+      position:absolute;
+      width:60%;
+      top:0px;
+      left:40%;
+      height:200px;
+    }
+    #tuijian a figure figcaption .title{
+      width:100%;
+      padding-top:22px;
+      font-size:28px;
+      line-height:1.5em;
+      color:rgb(50,50,50);
+    }
+    #tuijian a figure figcaption .title:hover{ color:rgb(150,150,150); }
+    #tuijian a figure figcaption .lx,#tuijian a figure figcaption .tjtime{
+      position:absolute;
+      color:rgb(100,100,100);
+      top:96%;
+    }
+    #tuijian a figure figcaption .lx{ left:1%; }
+    #tuijian a figure figcaption .tjtime{ left:85%; }
+    #tuijian #ckgdtj{
+      width:100%;
+      height:50px;
+      line-height:50px;
+      text-align:center;
+      font: size 17px;
+      background:rgb(220,220,220);
+      color:rgb(100,100,100);
+    }
+    #tuijian #ckgdtj:hover{ background:rgb(180,180,180); }
+    /*推荐样式结束*/
+
+  /*评论区样式结束*/
+/*主栏样式结束*/
+
+/*侧栏样式开始*/
+aside{ width:25%; float:left; }
+aside a{ display:block; }
+aside a figure{
+  width:100%;
+  height:230px;
+  margin:25px 0px;
+}
+aside a figure:hover{ background:rgb(235,235,235); }
+aside a figure img{
+  width:100%;
+  height:150px;
+  margin-bottom:10px;
+}
+aside a figure figcaption{
+  font-size:14px;
+  line-height:1.5em;
+  color:rgb(80,80,80);
+  transition:all 0.7s;
+}
+aside a figure figcaption:hover{ color:rgb(180,180,180); }
+aside #ckgdaside{
+  width:100%;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  font: size 17px;
+  background:rgb(220,220,220);
+  color:rgb(100,100,100);
+}
+aside #ckgdaside:hover{ background:rgb(180,180,180); }
+/*侧栏样式结束*/
+
+/*左侧栏样式开始*/
+#left{
+  position:fixed;
+  top:150px;
+  left:10%;
+  width:80px;
+  padding-right:30px;
+  border-right:0.9px solid rgba(100,100,100,0.4);
+}
+#left #date{
+  width:100%;
+  height:100px;
+}
+#left #date div{
+  margin:10px 0px;
+  text-align:center;
+}
+#left #date #year,#left #date #time{
+  font-size:17px;
+  color:rgb(50,50,50);
+}
+#left #date #day{ font-size:25px; }
+#left #fenxiang #wx,#left #fenxiang #qq,#left #fenxiang #qqkj,#left #fenxiang #xlwb{
+  height:45px;
+  width:45px;
+  border-radius:50%;
+  margin:10px auto;
+  cursor:pointer;
+}
+#left #fenxiang #wx{
+  background:rgb(190,190,190) url(../img/wx.svg) no-repeat center/32px;
+}
+#left #fenxiang #qq{
+  background:rgb(190,190,190) url(../img/qq.svg) no-repeat center/32px;
+}
+#left #fenxiang #qqkj{
+  background:rgb(190,190,190) url(../img/qqkj.svg) no-repeat center/35px;
+}
+#left #fenxiang #xlwb{
+  background:rgb(190,190,190) url(../img/xlwb.svg) no-repeat center/30px;
+}
+#left #fenxiang #wx:hover{
+  background:rgb(19, 216, 84) url(../img/wx.svg) no-repeat center/32px;
+}
+#left #fenxiang #qq:hover{
+  background:rgb(28, 199, 230) url(../img/qq.svg) no-repeat center/32px;
+}
+#left #fenxiang #qqkj:hover{
+  background:rgb(241, 210, 27) url(../img/qqkj.svg) no-repeat center/35px;
+}
+#left #fenxiang #xlwb:hover{
+  background:rgb(230, 59, 16) url(../img/xlwb.svg) no-repeat center/30px;
+}
+#left #fenxiangbt,#left #goplbt{
+  text-align:center;
+  margin:30px 0px;
+  width:100%;
+}
+#left #goplbt{ margin-bottom:10px; }
+#left #gopl{
+  text-align:center;
+  height:80px;
+  display:block;
+  width:60px;
+  margin:10px auto;
+  background:url(../img/gopl.svg) no-repeat center/30px;
+  cursor:pointer;
+  color:rgb(100,100,100);
+}
+/*左侧栏样式结束*/
