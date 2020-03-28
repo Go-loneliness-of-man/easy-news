@@ -1,0 +1,41 @@
+
+// 用户表
+create table user_t(user_id int primary key auto_increment, mail char(30), password varchar(30), name varchar(30), signature varchar(200), head varchar(200), good int, time bigint);
+alter table `user_t` add index (`mail`);
+
+// 用户点赞表
+create table good_t(user_id int, entity_id int, entity_type int);
+alter table `good_t` add index (`user_id`);
+
+// 实体类型表
+create table type_t(entity_type int primary key auto_increment, `name` varchar(100), `describe` varchar(100), `table` varchar(100));
+
+// 用户消息池
+create table message_t(msg_id int primary key auto_increment, user_id int, type int, `read` int, `text` text, title varchar(100));
+alter table `message_t` add index (`user_id`);
+
+// 标签表
+create table tag_t(tag_id int primary key auto_increment, name varchar(100), level int);
+
+// 专题表
+create table special_t(theme_id int primary key auto_increment, title varchar(100), click int, good int, master int, branch varchar(100), time bigint);
+
+// 新闻表
+create table news_t(news_id int primary key auto_increment, theme_id int, title varchar(100), click int, good int, file varchar(200), master int, branch varchar(100), time bigint, revise bigint);
+
+// 评论表
+create table discuss_t(discuss_id int primary key auto_increment, user_id int, entity_id int, entity_type int, good int, time bigint, text text);
+alter table `discuss_t` add index (`user_id`);
+alter table `discuss_t` add index (`entity_id`);
+
+// 评论回复表
+create table discuss2_t(discuss2_id int primary key auto_increment, user_id int, entity_id int, entity_type int, good int, time bigint, text text, master int, discuss_id int);
+alter table `discuss2_t` add index (`user_id`);
+alter table `discuss2_t` add index (`entity_id`);
+alter table `discuss2_t` add index (`master`);
+alter table `discuss2_t` add index (`discuss_id`);
+
+
+
+
+
