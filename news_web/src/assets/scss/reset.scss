@@ -1,0 +1,28 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li,
+pre,
+fieldset, lengend, button, input, textarea,
+th, td{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+ul,ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+i {
+  font-style: normal;
+}

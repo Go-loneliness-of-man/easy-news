@@ -1,0 +1,72 @@
+
+@import "../../assets/scss/importScss.scss";
+
+.top {
+    @include wh(100%, 9%);
+    @include flex();
+
+    background: $bg;
+
+    .logo {
+        @include wh(20%, 100%);
+        @include flex(flex-start, center);
+
+        padding-left: 10%;
+
+        img {
+            @include circle();
+
+            height: 80%;
+        }
+    }
+
+    .topList {
+        @include wh(60%, 100%);
+        @include flex(flex-end);
+
+        .topListItem {
+            @include wh(15%, 100%);
+            @include flex(center, center, wrap);
+
+            cursor: pointer;
+
+            .icon {
+                @include wh(80%, 65%);
+                @include flex(center, center);
+
+                svg path{
+                    fill: $bgll;
+                }
+            }
+
+            .text {
+                @include wh(80%, 35%);
+                @include flex(center);
+
+                color: $fcl;
+            }
+
+            &:hover {
+                background: $bgaa;
+
+                .icon svg path { fill: $bglll; };
+                .text { color: $fcll; }
+            }
+        }
+
+        .active {
+            background: $bgaa;
+            
+            .icon svg path { fill: $bglll; };
+            .text { color: $fcll; }
+        }
+    }
+}
+
+
+
+
+
+
+
+

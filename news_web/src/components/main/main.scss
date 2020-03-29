@@ -1,0 +1,59 @@
+
+@import "../../assets/scss/importScss.scss";
+
+.main {
+    @include wh(96%, 91%);
+
+    padding: 0px 2%;
+
+    .mainTop {
+        @include wh(100%, 5%);
+        @include flex(flex-start, center);
+
+        .pathList {
+            @include wh(50%, 100%);
+            @include flex(flex-start, center);
+
+
+            .pathListItem {
+                @include flex(flex-start, center);
+
+                font-size: 16px;
+
+                .separator {
+                    color: $fcl;
+                    margin: 0px 10px;
+                }
+
+                .link {
+                    cursor: pointer;
+
+                    &:hover {
+                        font-weight: bold;
+                    }
+                }
+
+                .active {
+                    font-weight: bold;
+                    cursor: text!important;
+                }
+            }
+        }
+
+        .search {
+
+        }
+
+        .create {
+
+        }
+    }
+}
+
+
+
+
+
+
+
+

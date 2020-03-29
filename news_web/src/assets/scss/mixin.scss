@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+// 宽高
+@mixin wh($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+// 正方形
+@mixin square($len) {
+  @include wh($len, $len);
+}
+
+// 圆形
+@mixin circle() {
+  border-radius: 50%;
+}
+
+// 定位，参数依次是 top、left、定位类型、z 轴
+@mixin pos($t: auto, $l: auto, $type: absolute, $z: 0) {
+  top: $t;
+  left: $l;
+  position: $type;
+  z-index: $z;
+}
+
+// 文字居中，参数依次是元素高度、水平居中类型、是否设置元素高度
+@mixin textCenter($lineHeight, $textAlign: center, $height: 1) {
+  text-align: $textAlign;                                                   // 水平居中
+  line-height: $lineHeight;                                                 // 垂直居中
+  @if($height == 1) {                                                       // 是否设置元素高度
+    height: $lineHeight;
+  }
+}
+
+// 绝对定位居中，参数依次是元素宽、高、定位类型、z 轴
+@mixin posCenter($w, $h, $type: absolute, $z: 0) {
+  @include wh($w, $h);
+  @include pos(50%, 50%, $type, $z);
+  margin-top: -($w / 2);
+  margin-left: -($h / 2);
+}
+
+// flex 布局，参数依次是水平居中类型、垂直居中类型、溢出处理类型、多行对齐类型
+@mixin flex($flat: flex-start, $vertical: flex-start, $wrap: nowrap, $alignContent: flex-start) {
+  display: flex;
+  justify-content: $flat;                                                   // 水平对齐方式
+  align-items: $vertical;                                                   // 垂直对齐方式
+  flex-wrap: $wrap;                                                         // 溢出处理
+  align-content: $alignContent;                                             // 多行对齐方式
+}
+
+// 文字溢出省略号
+@mixin slh {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 滚动条样式，参数依次是滚动条宽、滚动条高、滑块圆角、滑块颜色、轨道颜色
+@mixin scrollBar($scrollW, $scrollH, $r, $color, $bgcolor) {
+  overflow: auto;
+  
+  &::-webkit-scrollbar {                                                    // 滚动条整体样式
+    @include wh($scrollW - 4, $scrollH - 4);                                // 宽、高分别对应横竖滚动条的尺寸
+  }
+
+  &::-webkit-scrollbar-thumb {                                              // 滚动条里面的小滑块
+    @include wh($scrollW, $scrollH);                                        // 滑块宽高
+
+    border-radius: $r;                                                      // 滑块圆角
+    background: $color;                                                     // 滑块颜色
+  }
+
+  &::-webkit-scrollbar-track {                                              // 滚动条轨道
+    background: $bgcolor;                                                   // 轨道颜色
+  }
+}
+
+// 边框，参数依次是样式，是否存在上、右、下、左边框（顺时针
+@mixin border($style, $t: 1, $r: 1, $b: 1, $l: 1) {
+  @if($t == 1) {
+    border-top: $style;
+  }
+  @if($r == 1) {
+    border-right: $style;
+  }
+  @if($b == 1) {
+    border-bottom: $style;
+  }
+  @if($l == 1) {
+    border-left: $style;
+  }
+}
+
+
