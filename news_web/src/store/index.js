@@ -16,7 +16,7 @@ export default new Vuex.Store({
 	modules: { news, msg, special, tag, user }, // 模块
 
 	state: {                                 	// 定义状态
-		topItem: 'news',					  	// 顶栏当前选项
+		topItem: 'news', // 顶栏当前选项
 		pathList: [{ text: '新闻列表', route: '/news' }], // 主栏路径列表
 	},
 
@@ -27,15 +27,5 @@ export default new Vuex.Store({
 	mutations,                          	    // 定义同步提交方法
 	actions                                 	// 定义异步操作方法
 });
-
-
-
-
-
-
-
-
-
-
 
 
