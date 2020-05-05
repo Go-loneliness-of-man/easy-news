@@ -5,30 +5,34 @@ import main from '../components/main/main.vue';
 import top from '../components/top/top.vue';
 import msg from '../components/main/msg/msg.vue';
 import news from '../components/main/news/news.vue';
-import special from '../components/main/special/special.vue';
+import theme from '../components/main/theme/theme.vue';
 import tag from '../components/main/tag/tag.vue';
 import user from '../components/main/user/user.vue';
+
+import createR from './create.js';
 
 Vue.use(Router);
 
 const msgR = { path: 'msg', component: msg };
 const newsR = { path: 'news', component: news };
-const specialR = { path: 'special', component: special };
+const themeR = { path: 'theme', component: theme };
 const tagR = { path: 'tag', component: tag };
 const userR = { path: 'user', component: user };
 
-const index = {
+const root = {
   path: '/',
   components: { top, main },
-  children: [ msgR, newsR, specialR, tagR, userR ],
+  children: [ msgR, newsR, themeR, tagR, userR, createR ],
 };
 
-const router = new Router({ routes: [ index ] });
+const router = new Router({ routes: [ root ] });
 
-// 检测登录，未登录跳转到登录页面
+// 导航守卫
 router.beforeEach(function (to, from, next) {
-  if (to.fullPath === '/') { // 默认在新闻选项
-    next('/news');
+  switch(to.fullPath) {
+    case '/': // 默认 /news
+      next('/news');
+      break;
   }
   next();
 });

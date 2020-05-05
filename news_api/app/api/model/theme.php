@@ -7,7 +7,7 @@ use \core\publicModel;
 class theme extends publicModel{
 
     public function add() {
-        
+        dump($this);
     }
 
     public function del() {

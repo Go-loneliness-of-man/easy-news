@@ -93,4 +93,48 @@
   }
 }
 
+// 表单输入框，参数依次是高度、字体大小、字体颜色、边框样式
+@mixin input($h, $fsz, $fc, $border) {
+  input, .el-input__inner {
+    border-radius: 0px;
+    transition: all 0.6s;
+    font-size: $fsz;
+    color: $fc;
+  
+    &:hover, &:focus {
+      border: $border;
+    }
+  }
+  
+  .el-input__prefix i {
+    line-height: $h;
+  }
+}
+
+// 表单按钮，参数依次是高度、字体大小、字体颜色、边框样式
+@mixin button($h, $fsz, $fc, $border) {
+  @include flex(center, center);
+
+  padding: 0px;
+  font-size: $fsz;
+  color: $fc;
+  background: white;
+  transition: all 0.6s;
+  border-radius: 0px;
+
+  &:hover {
+    border: $border;
+    background: #333;
+    color: #eee;
+  }
+
+  &:focus {
+    border: $border;
+    background: white;
+    color: $fc;
+  }
+}
+
+
+
 

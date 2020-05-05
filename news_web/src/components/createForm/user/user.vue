@@ -1,7 +1,7 @@
 
 <template>
-    <div class="news">
-        3
+    <div class="createUser">
+        5
     </div>
 </template>
 
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "special.scss";
+    @import "user.scss";
 </style>

@@ -7,7 +7,7 @@ export default {
 	namespaced: true,
 	
 	state: {                                  // 定义状态
-		
+		list: [],
 	},
 
 	getters: {                                // 定义 getter

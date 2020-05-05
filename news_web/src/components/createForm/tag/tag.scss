@@ -1,0 +1,35 @@
+
+@import "../../../assets/scss/importScss.scss";
+
+.createTag {
+    @include wh(100%, 95%);
+
+    .el-form {
+        $h: 40px;
+
+        .el-form-item {
+            .el-form-item__content {
+                .el-input {
+                    @include input($h, $fsz, $fc, 1px solid $fcl);
+
+                    input {
+                      @include wh(100%, $h);
+                    }
+                }
+
+                button {
+                    @include wh(100%, $h);
+                    @include button($h, $fsz, $fc, 1px solid $fcl);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

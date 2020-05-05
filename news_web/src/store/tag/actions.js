@@ -1,5 +1,5 @@
 
-import axios from "../../public/server.js";
+import gAxios from "../../public/server.js";
 
 export default {
     

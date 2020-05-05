@@ -2,23 +2,24 @@
 @import "../../assets/scss/importScss.scss";
 
 .main {
-  @include wh(96%, 91%);
+  @include wh(100%, 90%);
 
-  padding: 0px 2%;
+  flex-grow: 2;
 
   .mainTop {
-    @include wh(100%, 5%);
+    @include wh(98%, 5%);
     @include flex(flex-start, center);
 
     .pathList {
-      @include wh(50%, 100%);
+      @include wh(60%, 100%);
       @include flex(flex-start, center);
-
 
       .pathListItem {
         @include flex(flex-start, center);
+        @include wh(100px, 100%);
+        @include slh();
 
-        font-size: 16px;
+        font-size: $fszb;
 
         .separator {
           color: $fcl;
@@ -41,11 +42,24 @@
     }
 
     .search {
+      $h: 36px;
 
-    }
+      @include wh(40%, 100%);
+      @include flex(flex-start, flex-end);
 
-    .create {
+      .searchBar {
+        @include wh(90%, $h);
+        @include input($h, $fsz, $fc, 1px solid $fcl);
 
+        input {
+          @include wh(100%, $h);
+        }
+      }
+
+      .searchButton {
+        @include wh(10%, $h);
+        @include button($h, $fsz, $fc, 1px solid $fcl);
+      }
     }
   }
 }

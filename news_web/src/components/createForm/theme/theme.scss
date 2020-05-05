@@ -1,0 +1,57 @@
+
+@import "../../../assets/scss/importScss.scss";
+
+.createTheme {
+  @include wh(100%, 95%);
+
+  .themeForm {
+    $h: 40px;
+
+    @include flex(space-between, flex-start, wrap);
+
+    .el-form-item {
+      @include wh(49%, $h);
+
+      margin: 1% 0%;
+
+      .el-form-item__content {
+        width: 100%;
+
+        .el-select {
+          width: 100%;
+        }
+
+        .el-input {
+          @include input($h, $fsz, $fc, 1px solid $fcl);
+
+          width: 100%;
+          
+        }
+
+        button {
+          $h: 50px;
+          
+          @include wh(100%, $h);
+          @include button($h, $fszbb, $fc, 1px solid $fcl);
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .title {
+      width: 100%;
+      margin-right: 0%;
+    }
+  }
+}
+
+
+
+
+
+
+
+

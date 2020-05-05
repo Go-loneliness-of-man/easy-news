@@ -18,6 +18,9 @@ export default {
 
   #app {
     @include wh(calc(100%), calc(100%));
+    @include flex(flex-start, flex-start);
+    
     background: $bglll;
+    flex-direction: column;
   }
 </style>

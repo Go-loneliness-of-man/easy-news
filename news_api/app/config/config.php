@@ -29,12 +29,13 @@ $config = [
 
   // 项目 URL
   'URL' => [
-    'http://rw.golone.xyz/'
+    'local' => 'http://newsapi.com/', // 测试
+    // 'local' => 'http://newsapi.golone.xyz/', // 生产
   ],
 
   // 配置中间件，执行顺序与数组顺序相同，每个元素依次是类名、方法名
   'middlewareFile' => [
-    // ['test', 'testFunc']
+    ['test', 'testFunc'],
   ],
 ];
 

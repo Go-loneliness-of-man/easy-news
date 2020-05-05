@@ -6,22 +6,21 @@ use \core\publicModel;
 
 class discuss extends publicModel{
 
-    public function add() {
+  public function add() {
+    
+  }
+
+  public function del() {
+
+  }
+
+  public function revise() {
+
+  }
+
+  public function read() {
         
-    }
-
-    public function del() {
-
-    }
-
-    public function revise() {
-
-    }
-
-    public function read() {
-        
-    }
+  }
 }
-
 
 

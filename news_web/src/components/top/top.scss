@@ -4,8 +4,9 @@
 .top {
     @include wh(100%, 9%);
     @include flex();
-
+    
     background: $bg;
+    border-bottom: 2px solid $bgl;
 
     .logo {
         @include wh(20%, 100%);

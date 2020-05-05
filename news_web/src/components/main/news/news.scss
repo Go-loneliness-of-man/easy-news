@@ -2,8 +2,55 @@
 @import "../../../assets/scss/importScss.scss";
 
 .news {
-    @include wh(100%, 100%);
+    @include wh(96%, 95%);
 
+    padding: 0% 2%;
+
+    .newsList {
+        @include wh(100%, 90%);
+
+        .newsTitleList { // 只定义列宽
+            .theme { width: 10%; }
+            .title { width: 10%; }
+            .click { width: 5%; }
+            .good { width: 5%; }
+            .tags { width: 30%; }
+            .createTime { width: 10%; }
+            .updateTime { width: 10%; }
+            .buttonList { width: 20%; }
+        }
+
+        .newsListItem { // 只写定义和下级样式
+            .theme { width: 10%; }
+            .title { width: 10%; }
+            .click { width: 5%; }
+            .good { width: 5%; }
+            .tags { // 标签列
+                @include wh(30%, 100%);
+                @include flex(flex-start, center);
+
+                >.tag {
+                    @include wh(15%, 26px);
+                    @include textCenter(26px);
+
+                    margin-right: 10px;
+                    font-size: $fszss;
+                    background: $gray;
+                    border-radius: 6px;
+                    color: white;
+                    padding: 0px 4px;
+                }
+
+                >.master {
+                    background: $primary;
+                }
+            }
+
+            .createTime { width: 10%; }
+            .updateTime { width: 10%; }
+            .buttonList { @include wh(20%, 80%); }
+        }
+    }
 }
 
 

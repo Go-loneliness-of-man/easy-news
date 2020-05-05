@@ -1,6 +1,6 @@
 
 <template>
-    <div class="news">
+    <div class="msg">
         1
     </div>
 </template>

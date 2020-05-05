@@ -1,0 +1,65 @@
+
+@import "../../../assets/scss/importScss.scss";
+
+.nTable {
+    .nTableTitle {
+        @include wh(100%, 5%);
+        @include flex(flex-start, center);
+
+        border-bottom: 2px solid $fcl;
+
+        div {
+            @include slh();
+
+            text-align: center;
+            font-size: $fsz;
+            color: $fc;
+        }
+    }
+
+    .nTableListItem {
+        @include wh(100%, 5%);
+        @include flex(flex-start, center);
+
+        border-bottom: 1px solid $fcl;
+
+        div {
+            @include slh();
+
+            text-align: center;
+            font-size: $fszs;
+            color: $fc;
+        }
+
+        .buttonList { // 按钮列表常用，特别定义
+            @include flex(center, center);
+
+            .button {
+                @include wh(30px, 60%);
+
+                margin: 0px 5%;
+                cursor: pointer;
+
+                svg {
+                    @include wh(100%, 100%);
+
+                    path {
+                        fill: $fc;
+                    }
+                }
+
+                &:hover path {
+                    fill: $fcl;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

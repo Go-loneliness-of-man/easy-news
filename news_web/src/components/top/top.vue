@@ -13,9 +13,10 @@
 
 <script>
 
+import create from '../../assets/svg/create.js';
 import msg from '../../assets/svg/msg.js';
 import news from '../../assets/svg/news.js';
-import special from '../../assets/svg/special.js';
+import theme from '../../assets/svg/theme.js';
 import tag from '../../assets/svg/tag.js';
 import user from '../../assets/svg/user.js';
 
@@ -24,8 +25,9 @@ export default {
   data() {
     return {
       topList: [ // 顶部按钮
+        { svg: create, text: '添加', name: 'create' },
         { svg: news, text: '新闻', name: 'news' },
-        { svg: special, text: '专题', name: 'special' },
+        { svg: theme, text: '专题', name: 'theme' },
         { svg: tag, text: '标签', name: 'tag' },
         { svg: user, text: '账号', name: 'user' },
         { svg: msg, text: '消息', name: 'msg' },
@@ -40,15 +42,20 @@ export default {
   methods: {
 
     // 选择内容区
-    switchMain(item) {
-      if(this.$route.path !== `/${item}`)
-        this.$router.push(`/${item}`);
-      this.$store.dispatch('updataTopItem', item);
+    switchMain(name) {
+      if(name === 'create')
+        this.$router.push(`/${name}/news`);
+      else if(this.$route.path !== `/${name}`)
+        this.$router.push(`/${name}`);
+      this.$store.dispatch('updateTopItem', name);
     }
   },
 
   mounted() {
-
+    let { topItem, $store, $route: { path } } = this;
+    path = path.split('/')[1];
+    if(path !== topItem) // 初始化顶栏选项
+      $store.commit('updateEasy', { key: 'topItem', value: path }); // 修改顶栏
   }
 };
 

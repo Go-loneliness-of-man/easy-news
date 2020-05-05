@@ -18,7 +18,7 @@ alter table `message_t` add index (`user_id`);
 create table tag_t(tag_id int primary key auto_increment, name varchar(100), level int);
 
 // 专题表
-create table special_t(theme_id int primary key auto_increment, title varchar(100), click int, good int, master int, branch varchar(100), time bigint);
+create table theme_t(theme_id int primary key auto_increment, title varchar(100), click int, good int, master int, branch varchar(100), time bigint);
 
 // 新闻表
 create table news_t(news_id int primary key auto_increment, theme_id int, title varchar(100), click int, good int, file varchar(200), master int, branch varchar(100), time bigint, revise bigint);
